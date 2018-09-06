@@ -26,7 +26,7 @@ buildApplicationContext();
       }
 ```
 
-`annotationLoader` should be handled before the babel loader does
+`annotationLoader` should be handled before the babel loader.
 
 ## @ComponentScan
 
