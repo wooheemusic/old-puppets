@@ -16,7 +16,10 @@ function build(fileNames) {
     const matchMenuNo = file.match(/\n(\/\/\s)?@MenuNo\(\d+\)/); // \n 수정해야함
     if (matchMenuNo !== null) {
       const firstMatch = matchMenuNo[0];
-      const menuNo = firstMatch.slice(9, firstMatch.length - 1);
+      const menuNo = firstMatch.slice(
+        firstMatch[1] === "/" ? 12 : 9,
+        firstMatch.length - 1
+      );
       // console.log(menuNo, fileName);
       mapper.push({ menuNo, fileName });
     }
