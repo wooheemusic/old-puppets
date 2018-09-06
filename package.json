@@ -1,0 +1,27 @@
+{
+  "name": "master-of-puppets",
+  "version": "1.0.0",
+  "description": "This module is a Spring-like container that implements the inversion-of-control pattern. (not generalized yet, just for SK ECOTrol project so far)",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "npx babel src -d dist",
+    "copy": "cp package.json dist/ && cp README.md dist/ && cp LICENSE dist/",
+    "build": "npm run bundle && npm run copy"
+  },
+  "repository": "wooheemusic/jsonthefly",
+  "keywords": [
+    "ioc",
+    "spring",
+    "node"
+  ],
+  "author": "wooheemusic <wooheemusic@gmail.com> (https://github.com/wooheemusic)",
+  "homepage": "https://github.com/wooheemusic/jsonthefly#readme",
+  "bugs": {
+    "url": "https://github.com/wooheemusic/jsonthefly/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}
