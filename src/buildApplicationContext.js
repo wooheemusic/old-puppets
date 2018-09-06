@@ -114,11 +114,12 @@ function getNextImportCaret(file, lastIndex = file.length) {
   return ending + 1;
 }
 
-export default function buildApplicationContext() {
+export default function buildApplicationContext(
+  globPattern = "src/components/**/*.js"
+) {
   const glob = require("glob");
 
-  // (예정) src/components를 커스터마이징 할 수 있도록
-  const fileNames = glob.sync("src/components/**/*.js");
+  const fileNames = glob.sync(globPattern);
 
   build(fileNames);
 
