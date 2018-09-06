@@ -83,6 +83,22 @@ export default class Sample1 extends Component {
     return (
 ```
 
+## decorators out of class
+
+```
+// @MenuNo(3)
+export default hoc(AnyOne);
+```
+
+This line-comment is regarded as annotated.
+
+or
+
+```
+// @MenuNo(4)
+let Aaa = props => <Hi mom={props.sorry} />
+```
+
 ## License
 
 MIT © [wooheemusic](https://github.com/wooheemusic)

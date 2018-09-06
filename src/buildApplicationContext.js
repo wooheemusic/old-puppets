@@ -13,7 +13,7 @@ function build(fileNames) {
     console.log(i, fileName);
     const file = fs.readFileSync(fileName, "utf-8");
     // console.log(file);
-    const matchMenuNo = file.match(/\n@MenuNo\(\d+\)/); // \n 수정해야함
+    const matchMenuNo = file.match(/\n(\/\/\s)?@MenuNo\(\d+\)/); // \n 수정해야함
     if (matchMenuNo !== null) {
       const firstMatch = matchMenuNo[0];
       const menuNo = firstMatch.slice(9, firstMatch.length - 1);
@@ -60,7 +60,7 @@ function getApplicationContextFile(mapper, rootFilePath) {
     const componentName = getComponentName(fileName);
     const relativePath = getRelativePath(rootFilePathLength, fileName);
     importScript = `${importScript}import ${componentName} from '${relativePath}';\n`;
-    mapperScript = `${mapperScript}\t{ menuNo: ${menuNo}, component: ${componentName} },\n`;
+    mapperScript = `${mapperScript}  { menuNo: ${menuNo}, component: ${componentName} },\n`;
   }
   const applicationContextFile = `${comments}\n${importScript}\nconst mapper = [\n${mapperScript}];\n\nexport default mapper;\n`;
   // console.log("applicationContextFile");
@@ -69,7 +69,7 @@ function getApplicationContextFile(mapper, rootFilePath) {
 }
 
 function getRelativePath(rootFilePathLength, fileName) {
-  return `.${fileName.slice(rootFilePathLength)}`;
+  return `.${fileName.slice(rootFilePathLength, fileName.length - 3)}`;
 }
 
 function getComponentName(fileName) {
