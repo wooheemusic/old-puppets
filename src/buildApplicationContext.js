@@ -50,7 +50,7 @@ function build(fileNames) {
 
 function getApplicationContextFile(mapper, rootFilePath) {
   const comments =
-    "/** \n\tThis script might be stale.\n\tIt will be refreshed at build time.\n*/\n";
+    "/**\n  This script might be stale.\n  It will be refreshed at build time.\n*/\n";
   let importScript = "";
   let mapperScript = "";
   const rootFilePathLength = rootFilePath.length;
@@ -62,7 +62,7 @@ function getApplicationContextFile(mapper, rootFilePath) {
     importScript = `${importScript}import ${componentName} from '${relativePath}';\n`;
     mapperScript = `${mapperScript}\t{ menuNo: ${menuNo}, component: ${componentName} },\n`;
   }
-  const applicationContextFile = `${comments}\n${importScript}\nconst mapper = [\n${mapperScript}]\n\nexport default mapper;\n`;
+  const applicationContextFile = `${comments}\n${importScript}\nconst mapper = [\n${mapperScript}];\n\nexport default mapper;\n`;
   // console.log("applicationContextFile");
   // console.log(applicationContextFile);
   return applicationContextFile;
