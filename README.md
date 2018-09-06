@@ -1,6 +1,6 @@
 ## Introduction
 
-'master-of-puppets' is a Spring-like container that implements the inversion-of-control pattern. It binds all annotated components in some certain contexts _WITHOUT_ `import`.
+'old-puppets' is a Spring-like container that implements the inversion-of-control pattern. It binds all annotated components in some certain contexts _WITHOUT_ `import`.
 
 ## WARN
 
@@ -9,7 +9,7 @@
 ## read annotations and build a application context
 
 ```
-const { buildApplicationContext } = require("master-of-puppets");
+const { buildApplicationContext } = require("old-puppets");
 buildApplicationContext();
 ```
 
@@ -20,7 +20,7 @@ buildApplicationContext();
         test: /\.js$/,
         use: [
           {
-            loader: require.resolve("master-of-puppets/loaders/annotationLoader")
+            loader: require.resolve("old-puppets/loaders/annotationLoader")
           }
         ]
       }
@@ -33,7 +33,7 @@ buildApplicationContext();
 ```
 import React, { Component } from "react";
 
-import ComponentScan from "master-of-puppets/annotations/ComponentScan";
+import ComponentScan from "old-puppets/annotations/ComponentScan";
 
 @ComponentScan
 export default class Root extends Component {
@@ -74,7 +74,7 @@ import applicationContext from "./applicationContext";
 ```
 import React, { Component } from "react";
 
-import MenuNo from "master-of-puppets/annotations/MenuNo";
+import MenuNo from "old-puppets/annotations/MenuNo";
 
 @MenuNo(1)
 export default class Sample1 extends Component {

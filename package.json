@@ -1,5 +1,5 @@
 {
-  "name": "master-of-puppets",
+  "name": "old-puppets",
   "version": "1.0.0",
   "description": "This module is a Spring-like container that implements the inversion-of-control pattern. (not generalized yet, just for SK ECOTrol project so far)",
   "main": "index.js",
@@ -8,16 +8,16 @@
     "copy": "cp package.json dist/ && cp README.md dist/ && cp LICENSE dist/",
     "build": "npm run bundle && npm run copy"
   },
-  "repository": "wooheemusic/jsonthefly",
+  "repository": "wooheemusic/old-puppets",
   "keywords": [
     "ioc",
     "spring",
     "node"
   ],
   "author": "wooheemusic <wooheemusic@gmail.com> (https://github.com/wooheemusic)",
-  "homepage": "https://github.com/wooheemusic/jsonthefly#readme",
+  "homepage": "https://github.com/wooheemusic/old-puppets#readme",
   "bugs": {
-    "url": "https://github.com/wooheemusic/jsonthefly/issues"
+    "url": "https://github.com/wooheemusic/old-puppets/issues"
   },
   "license": "MIT",
   "devDependencies": {
